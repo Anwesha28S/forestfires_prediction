@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6ff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            background: #4169e1;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1e50d5;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <h2>Forest Fire Weather Index (FWI) Prediction</h2>
+
+    <form action="/predictdata" method="post">
+        
+        <label>Temperature (°C)</label>
+        <input type="number" step="0.01" name="temperature" required>
+
+        <label>Relative Humidity (RH %)</label>
+        <input type="number" step="0.01" name="rh" required>
+
+        <label>Wind Speed (WS km/h)</label>
+        <input type="number" step="0.01" name="ws" required>
+
+        <label>Rain (mm)</label>
+        <input type="number" step="0.01" name="rain" required>
+
+        <label>FFMC(Fine Fuel Moisture Code)</label>
+        <input type="number" step="0.01" name="fmmc" required>
+
+        <label>DMC(Drought Moisture Code)</label>
+        <input type="number" step="0.01" name="dmc" required>
+
+        <label>ISI(Initial Spread Index)</label>
+        <input type="number" step="0.01" name="isi" required>
+
+        <label>Classes</label>
+        <select name="classes" required>
+            <option value="0">Fire</option>
+            <option value="1">Not Fire</option>
+        </select>
+
+        <label>Region</label>
+        <select name="region" required>
+            <option value="0">Bejaia</option>
+            <option value="1">Sidi-Bel</option>
+            
+        </select>
+
+        <button type="submit">Predict FWI</button>
+    </form>
+    {% if results is not none %}
+    <div style="margin-top:20px; padding:10px; background:#f0f0f0; border-radius:5px;">
+        <h3>Predicted FWI: {{ results }}</h3>
+    </div>
+{% endif %}
+</div>
+
+</body>
+</html>
