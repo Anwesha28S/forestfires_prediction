@@ -11,7 +11,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 700px;
             margin: auto;
             background: white;
             padding: 25px;
@@ -53,7 +53,42 @@
 
 <body>
 
-<div class="container">
+
+    <h2>Forest Fire Weather Index (FWI) Prediction</h2>
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid #ddd;">
+        <h3>Algerian Forest Fires Dataset</h3>
+        <p><strong>Data Set Information:</strong></p>
+        <ul>
+            <li>The dataset includes 244 instances from two regions of Algeria:</li>
+            <ul>
+                <li>Bejaia region (northeast)</li>
+                <li>Sidi Bel-abbes region (northwest)</li>
+            </ul>
+            <li>122 instances for each region.</li>
+            <li>Data collected from June 2012 to September 2012.</li>
+            <li>The dataset includes 11 attributes and 1 output attribute (class).</li>
+            <li>The 244 instances are classified into <strong>Fire</strong> (138 instances) and <strong>Not Fire</strong> (106 instances) classes.</li>
+        </ul>
+    </div>
+    <!-- Attribute Information -->
+    <div style="background:#f0f0f0; padding:15px; border-radius:8px; margin-bottom:20px;">
+        <h3>Attribute Information</h3>
+        <ul>
+            <li><strong>Date:</strong> (DD/MM/YYYY) Day, month ('June' to 'September'), year (2012)</li>
+            <li><strong>Temp:</strong> Temperature at noon (°C): 22 to 42</li>
+            <li><strong>RH:</strong> Relative Humidity (%): 21 to 90</li>
+            <li><strong>Ws:</strong> Wind speed (km/h): 6 to 29</li>
+            <li><strong>Rain:</strong> Total rainfall of the day (mm): 0 to 16.8</li>
+            <li><strong>FFMC:</strong> Fine Fuel Moisture Code index: 28.6 to 92.5</li>
+            <li><strong>DMC:</strong> Duff Moisture Code index: 1.1 to 65.9</li>
+            <li><strong>DC:</strong> Drought Code index: 7 to 220.4</li>
+            <li><strong>ISI:</strong> Initial Spread Index: 0 to 18.5</li>
+            
+            <li><strong>FWI:</strong> Fire Weather Index: 0 to 31.1</li>
+        </ul>
+    </div>
+
+    <div class="container">
     <h2>Forest Fire Weather Index (FWI) Prediction</h2>
 
     <form action="/predictdata" method="post">
@@ -100,6 +135,6 @@
     </div>
 {% endif %}
 </div>
-
+</div>
 </body>
 </html>
