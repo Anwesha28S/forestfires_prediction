@@ -9,6 +9,25 @@ The period from June 2012 to September 2012.
 The dataset includes 11 attribues and 1 output attribue (class)
 The 244 instances have been classified into fire(138 classes) and not fire (106 classes) classes.
 
+Models Used
+
+Several regression models were trained and compared:
+
+Linear Regression
+
+Ridge Regression
+
+RidgeCV
+
+Lasso
+
+LassoCV
+
+ElasticNet
+
+ElasticNetCV
+
+Among these, Ridge Regression achieved the highest accuracy of 96%, and was therefore selected for predicting the FWI.
 
 Attribute Information:
 
